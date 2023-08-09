@@ -10,39 +10,15 @@ const productService = new ProductService();
 export default class ProductController extends Controllers {
   constructor() {
     super(productService);
-  }
+  }  
 
-  saveProduct = async (req, res) => {
-    const { body } = req;
-    let product = { ...body, status: true };
-    if (
-      !product.title ||
-      !product.description ||
-      !product.price ||
-      !product.code ||
-      !product.status ||
-      !product.stock ||
-      !product.category
-    ) {
-      throw CustomError.createError({
-        name: "TYPE_ERROR",
-        cause: generateProductErrorAttributes(body),
-        message: "Error trying to create the product.",
-        code: EErrors.INVALID_TYPE_ERROR
-      });
-    }
-      product.thumbnails = [];
-      let response = await productService.saveProduct(product);
-      response.send(response);
-  };
-  
-
-  createMocksProducts = async (req, res) => {
+  createMocksProducts = async (req, res, next) => {
     try {
       const response = await productService.createMocksProducts();
       res.status(200).json({ products: response });
     } catch (error) {
       logger.error(error);
+      next(error.message);
     }
   };
   

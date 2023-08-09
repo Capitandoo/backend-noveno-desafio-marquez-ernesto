@@ -14,7 +14,7 @@ export default class TicketManagerDB extends MongoDao {
       return result;
     } catch (error) {
       logger.error(error);
-      return { error: error.message };
+      throw new Error (error.message);
     }
   }
 }

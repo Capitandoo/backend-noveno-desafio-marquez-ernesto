@@ -23,7 +23,7 @@ export default class CartController extends Controllers {
       res.json(cart);
     } catch (error) {
       logger.error(error);
-      next(error);
+      next(error.message);
     }
   };
   
@@ -33,7 +33,7 @@ export default class CartController extends Controllers {
       res.json(newCart);
     } catch (error) {
       logger.error(error);
-      next(error);
+      next(error.message);
     }
   };
   
@@ -46,7 +46,7 @@ export default class CartController extends Controllers {
       res.json(prodAdded);
     } catch (error) {
       logger.error(error);
-      next(error);
+      next(error.message);
     }
   };
   
@@ -58,7 +58,7 @@ export default class CartController extends Controllers {
       res.json(prodDelete);
     } catch (error) {
       logger.error(error);
-      next(error);
+      next(error.message);
     }
   };
   
@@ -69,7 +69,7 @@ export default class CartController extends Controllers {
       res.json (cartDelete);
     } catch (error) {
       logger.error(error);
-      next(error);
+      next(error.message);
     }
   ;}
   
@@ -81,7 +81,7 @@ export default class CartController extends Controllers {
       res.json (update);
     } catch (error) {
       logger.error (error);
-      next(error);
+      next(error.message);
     }
   }
   
@@ -93,7 +93,7 @@ export default class CartController extends Controllers {
         res.json(newQty);
     } catch (error) {
       logger.error(error);
-        next(error);
+      next(error.message);
     }
   }
   

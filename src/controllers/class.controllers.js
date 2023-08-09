@@ -1,8 +1,5 @@
 import { createResponse } from "../utils/utils.js";
 import { logger } from "../utils/logger.js";
-import { generateProductErrorAttributes } from "../middlewares/errors/info.js";
-import CustomError from "../middlewares/errors/customError.js";
-import EErrors from "../middlewares/errors/enum.js";
 
 export default class Controllers {
   constructor(service) {

@@ -19,6 +19,7 @@ const signup = async (req, email, password, done) => {
     return done(null, newUser);
   } catch (error) {
     logger.error(error);
+    next(error.message);
   }
 };
 

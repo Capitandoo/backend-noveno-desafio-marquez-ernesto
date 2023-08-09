@@ -9,7 +9,7 @@ const router = Router();
 router.get('/',passportCall("jwt"), authorizationRole(["user", "admin"]),controller.getAll);
 router.get('/:id', passportCall("jwt"), authorizationRole(["user", "admin"]), controller.getById);
 router.post("/mocking-products", controller.createMocksProducts);
-router.post('/', passportCall("jwt"), authorizationRole(["user","admin"]), uploader.array("thumbnails"), controller.createProduct);
+router.post('/', passportCall("jwt"), authorizationRole(["admin"]), uploader.array("thumbnails"), controller.createProduct);
 router.put('/:id', passportCall("jwt"), authorizationRole(["admin"]), controller.update);
 router.delete('/:id', passportCall("jwt"), authorizationRole(["admin"]), controller.delete);
 

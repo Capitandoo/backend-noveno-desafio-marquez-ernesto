@@ -16,7 +16,7 @@ export default class UserController extends Controllers {
       createResponse (res, 200, token);
     } catch (error) {
       logger.error(error);
-      next(error);
+      next(error.message);
     }
   };  
   
@@ -26,7 +26,7 @@ export default class UserController extends Controllers {
       createResponse(res, 200, user);
     } catch (error) {
       logger.error(error);
-      next(error);
+      next(error.message);
     }
   };
   
@@ -46,7 +46,7 @@ export default class UserController extends Controllers {
       });
     } catch (error) {
       logger.error(error);
-      next(error);
+      next(error.message);
     }
   };
 
@@ -77,6 +77,7 @@ export default class UserController extends Controllers {
       //res.clearCookie("token").send("logout");
     } catch (error) {
       logger.error(error);
+      next(error.message);
     }
   };
 

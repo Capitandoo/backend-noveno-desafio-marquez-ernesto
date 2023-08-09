@@ -15,6 +15,7 @@ export default class UserService extends Services {
       return token;
     } catch (error) {
       logger.error(error);
+      throw new Error (error.message);
     }
   };
   
@@ -24,6 +25,7 @@ export default class UserService extends Services {
       return usuario;
     } catch (error) {
       logger.error(error);
+      throw new Error (error.message);
     }
   };
 
