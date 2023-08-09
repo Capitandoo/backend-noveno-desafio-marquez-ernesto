@@ -1,9 +1,6 @@
 import Controllers from "./class.controllers.js";
 import ProductService from "../services/product.services.js";
 import { logger } from "../utils/logger.js";
-import { generateProductErrorAttributes } from "../middlewares/errors/info.js";
-import CustomError from "../middlewares/errors/customError.js";
-import EErrors from "../middlewares/errors/enum.js";
 
 const productService = new ProductService();
 

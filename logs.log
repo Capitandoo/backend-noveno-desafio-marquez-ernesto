@@ -42,3 +42,12 @@
 {"age":67,"cart":"64b6b9c29790ba99d110695c","email":"carrio@mail.com","exp":1691501899,"first_name":"elisa","iat":1691500699,"last_name":"carrio","level":"info","message":"payload--->","role":"user","userId":"64b6b9c29790ba99d110695e"}
 {"level":"info","message":"Server iniciado en el puerto 8080"}
 {"age":67,"cart":"64b6b9c29790ba99d110695c","email":"carrio@mail.com","exp":1691501899,"first_name":"elisa","iat":1691500699,"last_name":"carrio","level":"info","message":"payload--->","role":"user","userId":"64b6b9c29790ba99d110695e"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB"}
+{"level":"info","message":"Server iniciado en el puerto 8080"}
+{"level":"info","message":"Conectado a la base de datos de MongoDB"}
+{"level":"info","message":"Server iniciado en el puerto 8080"}
+{"age":67,"cart":"64b6b9c29790ba99d110695c","email":"carrio@mail.com","exp":1691619292,"first_name":"elisa","iat":1691618092,"last_name":"carrio","level":"info","message":"payload--->","role":"user","userId":"64b6b9c29790ba99d110695e"}

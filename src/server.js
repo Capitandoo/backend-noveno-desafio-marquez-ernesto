@@ -3,7 +3,7 @@ import cors from "cors";
 import { __dirname, pathMessages } from "./path.js";
 import { Server } from "socket.io";
 import handlebars from "express-handlebars";
-import { errorHandler } from "./middlewares/errorHandler.js";
+import { errorHandler } from "./middlewares/errors/errorHandler.js";
 import session from "express-session";
 import MongoStore from "connect-mongo";
 import cookieParser from "cookie-parser";
@@ -12,7 +12,6 @@ import { logger } from "./utils/logger.js";
 import "./middlewares/passport/jwt.js";
 import "./middlewares/passport/local.js";
 import "./middlewares/passport/github.js";
-
 import routerApi from "./routes/index.js";
 //import ProductManager from "./daos/filesystem/ProductDao.js";
 //import ProductDao from "./daos/mongodb/ProductDao.js";
