@@ -10,5 +10,6 @@ export default {
     PRIVATE_KEY: process.env.PRIVATE_KEY,
     JWT_SECRET: process.env.JWT_SECRET,
     EMAIL: process.env.EMAIL,
-    PASSWORD: process.env.PASSWORD
+    PASSWORD: process.env.PASSWORD,
+    NODE_ENV: process.env.NODE_ENV
 }
