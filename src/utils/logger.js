@@ -4,28 +4,57 @@ import config from "../../config.js";
 
 let logger;
 
-const logLevels = {
-  fatal: 0,
-  error: 1,
-  warning: 2,
-  info: 3,
-  http: 4,
-  debug: 5,
+const customLevels = {
+  levels: {
+    fatal: 0,
+    error: 1,
+    warning: 2, 
+    info: 3, 
+    http: 4, 
+    debug: 5, 
+  },
+  colors: {
+    fatal: "red",
+    error: "magenta",
+    warning: "yellow",
+    info: "green",
+    http: "cyan", 
+    debug: "blue",
+  },
 };
 
 if (config.NODE_ENV === "dev") {
   logger = winston.createLogger({
     level: "debug",
-    levels: logLevels,
-    transports: [new winston.transports.Console()],
+    levels: customLevels.levels,
+    transports: [new winston.transports.Console({
+      format: winston.format.combine(
+        winston.format.timestamp({ format: "MM-DD-YYYY HH:mm:ss" }),
+        winston.format.colorize({
+          all: true,
+          colors: customLevels.colors,
+        }),
+        winston.format.printf((info) => `${info.level} | ${[info.timestamp]} | ${info.message}`)
+      )
+  })],
   });
 }
 
 if (config.NODE_ENV === "prod") {
   logger = winston.createLogger({
-    levels: logLevels,
+    levels: customLevels.levels,
     transports: [
-      new winston.transports.Console({ level: "info" }),
+      new winston.transports.Console({
+        level: "debug",
+        format: winston.format.combine(
+          winston.format.timestamp({ format: "MM-DD-YYYY HH:mm:ss" }),
+          winston.format.colorize({
+            all: true,
+            colors: customLevels.colors,
+          }),
+          winston.format.printf((info) => `${info.level} | ${[info.timestamp]} | ${info.message}`)
+        )
+    }),
       new winston.transports.File({ filename: "./errors.log", level: "error" }),
     ],
   });
